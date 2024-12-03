@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Justificar Inasistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="formJustificacion" (ngSubmit)="enviarJustificacion()">
+    <!-- Fecha -->
+    <ion-item>
+      <ion-label position="stacked">Fecha de la Clase</ion-label>
+      <ion-input type="date" formControlName="fecha"></ion-input>
+    </ion-item>
+
+    <!-- Asignatura -->
+    <ion-item>
+      <ion-label position="stacked">Asignatura</ion-label>
+      <ion-select
+        formControlName="asignatura"
+        (ionChange)="actualizarDocente()"
+        placeholder="Seleccionar Asignatura"
+      >
+        <ion-select-option *ngFor="let asignatura of asignaturas" [value]="asignatura.nombre">
+          {{ asignatura.nombre }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Docente -->
+    <ion-item>
+      <ion-label position="stacked">Docente</ion-label>
+      <ion-input formControlName="docente" [value]="docenteSeleccionado" [readonly]="true"></ion-input>
+    </ion-item>
+
+    <!-- Motivo -->
+    <ion-item>
+      <ion-label position="stacked">Motivo</ion-label>
+      <ion-textarea
+        formControlName="motivo"
+        placeholder="Escribe el motivo de tu inasistencia"
+      ></ion-textarea>
+    </ion-item>
+
+    <!-- Archivo -->
+    <ion-item>
+      <ion-label position="stacked">Adjuntar Archivo</ion-label>
+      <input type="file" (change)="cargarArchivo($event)" accept=".pdf,.png,.jpg,.jpeg" />
+    </ion-item>
+
+    <!-- Botón -->
+    <ion-button expand="block" type="submit" [disabled]="formJustificacion.invalid">
+      Enviar Justificación
+    </ion-button>
+  </form>
+</ion-content>

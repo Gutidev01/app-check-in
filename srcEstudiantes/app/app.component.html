@@ -1,0 +1,29 @@
+<ion-app>
+  <!-- Menú lateral -->
+  <ion-menu side="start" menuId="main-menu" content-id="main-content" *ngIf="isLoggedIn">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <h2>{{ usuarioAutenticado?.nombreCompleto }}</h2>
+            <p>{{ usuarioAutenticado?.correo }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item routerLink="/inicio" routerDirection="root">Inicio</ion-item>
+        <ion-item routerLink="/perfil" routerDirection="forward">Perfil</ion-item>
+        <ion-item routerLink="/registro-clases" routerDirection="forward">Registrar Clase</ion-item>
+        <ion-item routerLink="/justificar-inasistencia" routerDirection="forward">Justificar Inasistencia</ion-item>
+        <ion-item routerLink="/mis-solicitudes" routerDirection="forward">Mis Justificaciones</ion-item>
+        <ion-item routerLink="/registrar-clase" routerDirection="forward">Registrar clase</ion-item>
+        <ion-item (click)="cerrarSesion()">Cerrar Sesión</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
