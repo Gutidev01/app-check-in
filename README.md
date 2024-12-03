@@ -1,5 +1,12 @@
-Proyecto Estudiantes:
+# Proyecto Estudiantes y Docentes
 
+Este repositorio contiene dos proyectos desarrollados con Ionic 7 y Angular 18: uno para estudiantes y otro para docentes. A continuación, se detallan los comandos necesarios para instalar las dependencias de cada proyecto.
+
+## Proyecto Estudiantes
+
+Ejecuta los siguientes comandos para instalar las dependencias del proyecto de **Estudiantes**:
+
+```bash
 npm install @angular/animations@^18.0.0
 npm install @angular/common@^18.0.0
 npm install @angular/compiler@^18.0.0
@@ -20,6 +27,7 @@ npm install rxjs@~7.8.0
 npm install swiper@^11.1.15
 npm install tslib@^2.3.0
 npm install zone.js@~0.14.2
+
 
 Proyecto Docentes:
 
