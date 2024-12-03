@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Foto de perfil -->
+  <div class="perfil-container">
+    <ion-avatar class="center-avatar" style="border: 3px solid #3880ff; padding: 5px;">
+      <img [src]="usuario?.imagenPerfil || 'assets/img/default-avatar.png'" alt="Foto de perfil" />
+    </ion-avatar>
+    <ion-button expand="block" (click)="seleccionarImagen()">
+      <ion-icon slot="start" name="camera-outline"></ion-icon>
+      Cambiar Imagen
+    </ion-button>
+    <!-- Input para cargar archivos -->
+    <input type="file" accept="image/*" hidden #fileInput (change)="cargarImagen($event)" />
+  </div>
+
+  <ion-item-divider color="medium"></ion-item-divider>
+
+  <!-- Formulario de perfil -->
+  <div class="form-section">
+    <h2>Editar Perfil</h2>
+    <form [formGroup]="formPerfil" (ngSubmit)="guardarCambios()">
+      <ion-item>
+        <ion-label position="stacked">RUT</ion-label>
+        <ion-input formControlName="rut" [disabled]="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nombre Completo</ion-label>
+        <ion-input formControlName="nombreCompleto"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Correo</ion-label>
+        <ion-input formControlName="correo" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+        <ion-input formControlName="fechaNacimiento" [disabled]="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Dirección</ion-label>
+        <ion-input formControlName="direccion"></ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit" [disabled]="formPerfil.invalid" color="primary">
+        <ion-icon slot="start" name="save-outline"></ion-icon>
+        Guardar Cambios
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

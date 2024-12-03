@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="assets/icon/logo.png" alt="Logo" class="logo" />
+  </div>
+
+  <form [formGroup]="formLogin" (ngSubmit)="iniciarSesion()">
+    <ion-item>
+      <ion-label position="stacked">RUT</ion-label>
+      <ion-input formControlName="rut" placeholder="Ingrese su RUT"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input formControlName="contraseña" type="password" placeholder="Ingrese su contraseña"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit" [disabled]="formLogin.invalid">
+      Iniciar Sesión
+    </ion-button>
+  </form>
+
+  <div class="ion-text-center">
+    <p>¿No tienes cuenta? <a routerLink="/registro">Regístrate aquí</a></p>
+  </div>
+</ion-content>

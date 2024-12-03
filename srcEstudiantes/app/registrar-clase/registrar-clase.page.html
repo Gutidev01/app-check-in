@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+        <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar Clase</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="formClase" (ngSubmit)="generarCodigoQR()">
+    <ion-item>
+      <ion-label position="stacked">Docente</ion-label>
+      <ion-select formControlName="docente" (ionChange)="actualizarAsignaturas()" placeholder="Seleccionar Docente">
+        <ion-select-option *ngFor="let docente of docentes" [value]="docente.id">
+          {{ docente.nombreCompleto }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Asignatura</ion-label>
+      <ion-select formControlName="asignatura" placeholder="Seleccionar Asignatura">
+        <ion-select-option *ngFor="let asignatura of asignaturasFiltradas" [value]="asignatura.id">
+          {{ asignatura.nombre }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-input type="date" formControlName="fecha"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="formClase.invalid">
+      Generar Código QR
+    </ion-button>
+  </form>
+
+  <div *ngIf="codigoQR" class="qr-container ion-text-center">
+    <qrcode [qrdata]="codigoQR" [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+</ion-content>
