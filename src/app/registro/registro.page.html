@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="formRegistro" (ngSubmit)="registrar()">
+    <ion-item>
+      <ion-label position="stacked">RUT</ion-label>
+      <ion-input formControlName="rut" placeholder="Ingrese su RUT"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nombre Completo</ion-label>
+      <ion-input formControlName="nombreCompleto" placeholder="Ingrese su nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Correo</ion-label>
+      <ion-input formControlName="correo" type="email" placeholder="Ingrese su correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+      <ion-datetime formControlName="fechaNacimiento" placeholder="Seleccione su fecha"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Dirección</ion-label>
+      <ion-input formControlName="direccion" placeholder="Ingrese su dirección"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input formControlName="contraseña" type="password" placeholder="Ingrese su contraseña"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Confirmar Contraseña</ion-label>
+      <ion-input formControlName="confirmarContraseña" type="password" placeholder="Confirme su contraseña"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit" [disabled]="formRegistro.invalid">Registrar</ion-button>
+  </form>
+</ion-content>

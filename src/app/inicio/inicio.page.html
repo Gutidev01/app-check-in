@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper-container [loop]="true" [pagination]="{ clickable: true }">
+    <swiper-slide *ngFor="let slide of slides">
+      <div class="slide-content">
+        <img [src]="slide.image" alt="Imagen">
+        <h2>{{ slide.title }}</h2>
+        <p>{{ slide.description }}</p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>

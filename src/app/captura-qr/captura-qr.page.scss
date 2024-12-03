@@ -1,0 +1,21 @@
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: black;
+  }
+  
+  video {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+  }
+  
+  .result-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+  
