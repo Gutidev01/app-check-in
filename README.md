@@ -29,8 +29,7 @@ npm install tslib@^2.3.0
 npm install zone.js@~0.14.2
 
 
-Proyecto Docentes:
-
+Ejecuta los siguientes comandos para instalar las dependencias del proyecto de Docentes:
 npm install @angular/animations@^18.0.0
 npm install @angular/common@^18.0.0
 npm install @angular/compiler@^18.0.0
@@ -47,7 +46,4 @@ npm install @capacitor/status-bar@6.0.2
 npm install @ionic/angular@^8.0.0
 npm install angularx-qrcode@^19.0.0
 npm install ionicons@^7.0.0
-npm install rxjs@~7.8.0
-npm install swiper@^11.1.15
-npm install tslib@^2.3.0
-npm install zone.js@~0.14.2
+
