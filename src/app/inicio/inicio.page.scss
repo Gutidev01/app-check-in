@@ -1,0 +1,36 @@
+swiper-container {
+    height: 100%;
+    width: 100%;
+    --swiper-pagination-bullet-inactive-color: var(--ion-text-color-step-800, #cccccc);
+    --swiper-pagination-color: var(--ion-color-primary, #0054e9);
+  }
+  
+  swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .slide-content img {
+    max-width: 80%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .slide-content h2 {
+    font-size: 1.4em;
+    color: #3880ff;
+    margin: 10px 0;
+  }
+  
+  .slide-content p {
+    font-size: 1em;
+    color: #fff; /* Cambia el color de la descripción a blanco */
+    line-height: 1.5;
+  }
+  

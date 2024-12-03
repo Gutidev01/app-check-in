@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Gestión de Clases</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let registro of asistencia">
+      <ion-label>
+        <h2>Asignatura ID: {{ registro.asignaturaId }}</h2>
+        <p>Fecha: {{ registro.fecha }}</p>
+      </ion-label>
+      <ion-list>
+        <ion-item *ngFor="let estudiante of registro.estudiantes">
+          <ion-label>
+            <h3>{{ estudiante.nombreCompleto }}</h3>
+            <p>Estado: {{ estudiante.estado }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+  </ion-list>
+</ion-content>

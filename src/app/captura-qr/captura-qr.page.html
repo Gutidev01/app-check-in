@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registrar clase QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Vista previa del video -->
+  <div class="video-container">
+    <video id="video-preview" autoplay></video>
+  </div>
+
+  <!-- Botones para iniciar y detener el escaneo -->
+  <ion-button expand="block" (click)="iniciarEscaneo()">Iniciar Escaneo</ion-button>
+  <ion-button expand="block" color="danger" (click)="detenerEscaneo()">Detener Escaneo</ion-button>
+
+  <!-- Mostrar datos escaneados -->
+  <div *ngIf="qrData" class="result-container">
+    <p><strong>Datos escaneados:</strong> {{ qrData }}</p>
+  </div>
+</ion-content>
