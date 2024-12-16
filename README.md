@@ -47,3 +47,9 @@ npm install @ionic/angular@^8.0.0
 npm install angularx-qrcode@^19.0.0
 npm install ionicons@^7.0.0
 
+URL Json GIthub
+https://github.com/Gutidev01/database.git
+
+URL JSON DEPLOY
+https://database-jo5x.onrender.com
+
